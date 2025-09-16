@@ -34,3 +34,4 @@ class DynamicArray:
         self.array[self.length] = n
         self.length += 1
         
+        
