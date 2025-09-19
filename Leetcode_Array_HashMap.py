@@ -28,7 +28,21 @@ class Solution:
                     Hash_t[c] += 1
 
             return Hash_s == Hash_t
-    
+
+    def groupAnagrams(self, strs: List[str]) -> List[List[str]]:
+        prev_map = defaultdict(list)
+
+        for word in strs:
+            count = [0] * 26
+
+            for char in word:
+                count[ord(char) - ord("a")] += 1
+
+            ## Now we have to make the map:
+            prev_map[tuple(count)].append(word)
+        
+        return list(prev_map.values())
+        
     def twoSum(self, nums: List[int], target: int) -> List[int]:
         Map = {}
         for i in range(len(nums)):
