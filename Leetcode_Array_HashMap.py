@@ -99,4 +99,16 @@ class Solution:
             
             return res
             
+    def longestConsecutive(self, nums: List[int]) -> int:
+        my_array = set(nums) ## O(n)
+        longest = 0
+        for n in my_array:
+            if (n-1) not in my_array:
+                length = 0
+                while (n+length) in my_array:
+                    length += 1
+                longest = max(length, longest)
+        return longest
+
+            
         
