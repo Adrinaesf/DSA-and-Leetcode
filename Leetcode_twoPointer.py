@@ -13,3 +13,19 @@ class Solution:
             L += 1
             R -= 1
         return True
+        
+  def twoSum(self, numbers, target):
+        """
+        :type numbers: List[int]
+        :type target: int
+        :rtype: List[int]
+        """
+        L, R = 0, len(numbers) - 1
+
+        while L < R:
+            if numbers[L] + numbers[R] == target:
+                return [L+1, R+1]
+            elif numbers[L] + numbers[R] > target:
+                R -= 1
+            else: 
+                L += 1
