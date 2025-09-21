@@ -14,6 +14,27 @@ class Solution:
                     return False
         
         return len(stack) == 0
+        
+    def dailyTemperatures(self, temperatures: List[int]) -> List[int]:
+        result = []
+
+        for i in range(len(temperatures)):
+            count = 1
+            found = False   # reset here for each i
+            
+            for j in range(i+1, len(temperatures)):
+                if temperatures[j] > temperatures[i]:
+                    result.append(count)
+                    found = True
+                    break
+                else:
+                    count += 1
+
+            if not found:
+                result.append(0)
+                
+        return result
+
 
 class MinStack:
     def __init__(self):
