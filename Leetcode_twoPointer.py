@@ -29,3 +29,18 @@ class Solution:
                 R -= 1
             else: 
                 L += 1
+
+  def maxArea(self, heights: List[int]) -> int:
+        res = 0
+        L, R = 0, len(heights) - 1
+
+
+        while L < R:
+            area = (R - L) * min(heights[L], heights[R])
+            res = max(res, area)
+            if heights[L] <= heights[R]:
+                L += 1
+            else: 
+                R -=1
+
+        return res
