@@ -33,5 +33,42 @@ class DynamicArray:
         
         self.array[self.length] = n
         self.length += 1
-        
-        
+    
+    def generate(self, numRows):
+        """
+        :type numRows: int
+        :rtype: List[List[int]]
+        """
+        if numRows == 1:
+            return [[1]]
+        elif numRows == 2:
+            return [[1], [1, 1]]
+        else:
+            res = [[1], [1, 1]]
+            prev_list = [1, 1]
+
+            for _ in range(2, numRows):
+                resu_list = [1]  # start each row with 1
+                for i in range(len(prev_list) - 1):
+                    number = prev_list[i] + prev_list[i + 1]
+                    resu_list.append(number)
+                resu_list.append(1)  # end each row with 1
+                res.append(resu_list)
+                prev_list = resu_list  # update prev_list
+
+            return res
+    
+    def getRow(self, rowIndex):
+        """
+        :type rowIndex: int
+        :rtype: List[int]
+        """
+        row = [1]
+        for _ in range(rowIndex):
+            # build next row using the previous one
+            new_row = [1]
+            for i in range(len(row) - 1):
+                new_row.append(row[i] + row[i + 1])
+            new_row.append(1)
+            row = new_row
+        return row
