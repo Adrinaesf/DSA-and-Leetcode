@@ -21,5 +21,26 @@ class Solution:
                 return mid
         
         return -1
+      
+    def searchMatrix(self, matrix: List[List[int]], target: int) -> bool:
+        L = 0
+        R = len(matrix[0]) - 1
 
+
+        ## 1 , 2, 3, 4, 5. target: 4
+        for List in matrix:
+            while L <= R: 
+                mid = (L + R) // 2
+                if target > List[mid]:
+                    L = mid + 1
+                elif target < List[mid]:
+                    R = mid - 1
+                elif target == List[mid]:
+                    return True
+            
+            L = 0
+            R = len(matrix[0]) - 1
+
+        
+        return False
         
