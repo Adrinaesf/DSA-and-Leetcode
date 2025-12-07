@@ -29,5 +29,33 @@ class Solution:
                 return True
         
         return False
+
+    def isAnagram(self, s: str, t: str) -> bool:
+        # 1. Check if they are in the same length or not
+        # 2. Then we get to a point where len(s) == len(t)
+        # 3. We crete two hashmap that maps char: # of occurance
+        # 4. then we go through the keys in has_s, and comapre if their values is the same as hash_t
+
+        # "abc" "aabbcc"
+        len_s = len(s)
+        len_t = len(t)
+        if len_s != len_t:
+            return False
+        
+        hash_s = defaultdict(int)
+        for ch in s:
+            hash_s[ch] += 1
+        # hash_s = {'r': 2 , 'a': 2, 'c': 2, 'e': 1}
+
+        hash_t = defaultdict(int)
+        for ch in t:
+            hash_t[ch] += 1
+        # hash_t = {'c': 2 , 'a': 2, 'r': 2, 'e': 1}
+
+        for key in hash_s.keys():
+            if hash_s[key] != hash_t[key]:
+                return False
+        
+        return True
     
 
