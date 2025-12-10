@@ -58,4 +58,19 @@ class Solution:
         
         return True
     
+    def twoSum(self, nums: List[int], target: int) -> List[int]:
+        # ok consider: nums = [3,6,5,4], target = 7
+        # comp_list = [4, 3, 2, 1]
+        # We want to take 3, and say 4 is complement that is in the array
+        # Then we want the index of 3, and 4
+
+        # Consider the map: {3:0, 4:1, 5:2, 6:3} -> num:index
+        # Then we do:
+        seen = {}
+        for i, num in enumerate(nums):
+            comp = target - num # comp = 3
+            if comp in seen:
+                return [seen[comp], i]
+
+            seen[num] = i # seen = {3:0, 6:1, 5:2, 4:3} 
 
