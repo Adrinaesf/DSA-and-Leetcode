@@ -91,4 +91,35 @@ class Solution:
                 break
                 
         return res
+    
+    def groupAnagrams(self, strs: List[str]) -> List[List[str]]:
+        # if two words are anagram of one another, then 
+        # When you sort them, they are the same word:
+        # so I will have a map that has the sorted word as key
+        # and the array as the groups
+
+        # Algo:
+        # 1. Crete a Map, and a list
+        # 2. Go through the words in the list
+        # 3. Consider the sorted version of that word = "sort_w"
+        # 4. if sort_w in Map, then Map[sort_w].append(word)
+        # 5. else Map[word] = []
+        # 6. Append the values to the res by the end
+        
+        anagram_Map = {}
+        res = []
+
+        for word in strs:
+            char_list = sorted(word)
+            sorted_string = "".join(char_list)
+            if sorted_string in anagram_Map:
+                anagram_Map[sorted_string].append(word)
+            else:
+                anagram_Map[sorted_string] = [word]
+        
+        for val in anagram_Map.values():
+            res.append(val)
+        
+        
+        return res
 
