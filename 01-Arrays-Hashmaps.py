@@ -73,4 +73,22 @@ class Solution:
                 return [seen[comp], i]
 
             seen[num] = i # seen = {3:0, 6:1, 5:2, 4:3} 
+    
+    def longestCommonPrefix(self, strs: List[str]) -> str:
+        # Think about sorting the strings
+
+        res = ""
+        strs.sort()
+
+        # Now let's get the first and last string
+        first = strs[0]
+        last = strs[len(strs) - 1]
+        print(strs)
+        for i in range(len(first)):
+            if first[i] == last[i]:
+                res += first[i]
+            else:
+                break
+                
+        return res
 
