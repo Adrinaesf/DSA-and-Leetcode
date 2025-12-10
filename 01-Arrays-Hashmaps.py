@@ -136,3 +136,16 @@ class Solution:
   
         return k
 
+    def majorityElement(self, nums: List[int]) -> int:
+        Map = {}
+        n = math.floor(len(nums) / 2)
+
+        for num in nums:
+            if num in Map:
+                Map[num] += 1
+            else: 
+                Map[num] = 1
+            
+            if Map[num] > n:
+                return num
+
