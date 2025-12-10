@@ -123,3 +123,16 @@ class Solution:
         
         return res
 
+    def removeElement(self, nums: List[int], val: int) -> int:
+        # [1, 2, 3, 1, 5, 6, 2]
+        # val = 1
+        # [2, 3, 5, 6, 2]
+
+        k = 0
+        for i in range(len(nums)):
+            if nums[i] != val:
+                nums[k] = nums[i]
+                k += 1
+  
+        return k
+
