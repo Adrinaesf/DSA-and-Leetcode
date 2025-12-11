@@ -149,3 +149,22 @@ class Solution:
             if Map[num] > n:
                 return num
 
+    def sortArray_insertion(self, nums: List[int]) -> List[int]:
+        # [10,9,1,1,1,2,3,1]
+        def swap(p1, p2):
+            temp = nums[p1]
+            nums[p1] = nums[p2]
+            nums[p2] = temp
+
+        def insert(pos):
+            ## This sorts the nums from 0 to pos:
+            ## Example: L = [1, 4, 2, 5, 3], pos = 3, output: L = [1, 2, 6, 5, 3]
+            ## Requires: L from 0 to pos - 1 is sorted
+            while (pos > 0 and nums[pos] < nums[pos-1]):
+                swap(pos, pos - 1)
+                pos = pos - 1
+        
+        for i in range(1, len(nums)):
+            insert(i)
+        
+        return nums
