@@ -1,0 +1,43 @@
+import unittest
+from _01_Arrays_Hashmaps import Solution
+
+# assertEqual / NotEqual
+# assertTrue / False
+# asserIn / assertNotIn
+# asserRaises
+# asserGreater / Less
+# asserGreaterThan / LessThan
+# asserIsIn / NotIn
+
+'''
+The steps: 
+1. Crete a file for testing
+2. import unittest
+3. from your_file_name import class_name_you_want_to_test
+4. Make a class Test(unittest.Testcase):
+5. Create def setUp(self): self.class = classname()
+6. Create def tearDown(self)
+
+7. Now you crete the tests you want to crete for the methods you want to test and check
+    - you crete the result: res = self.class.method(input), then self.asserEqual(res, expected_answer)
+
+8. Now we run the tests
+'''
+
+
+
+class TestCalc(unittest.TestCase):
+    def setUp(self) -> None:
+        "Set up an instance before each test"
+        self.sol = Solution()
+    
+    def test_mergeAlgo(self):
+        result = self.sol.mergeSort([2, 1, 3, 5, 4])
+        self.assertEqual(result, [1, 2, 3, 4, 5])
+        
+    def tearDown(self) -> None:
+        """Any cleanup"""
+        pass
+
+if __name__ == "__main__":
+    unittest.main()

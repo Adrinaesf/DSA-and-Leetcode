@@ -1,3 +1,5 @@
+from typing import List
+
 class Solution:
     def getConcatenation(self, nums: List[int]) -> List[int]:
         # Steps:
@@ -167,4 +169,50 @@ class Solution:
         for i in range(1, len(nums)):
             insert(i)
         
+        
         return nums
+
+    def mergeSort(self, L: List[int]) -> List[int]:
+        # Divide and conqure
+        # Break into two piece, merge sort, and then merge the sorted arrays
+        # [3,2,4,1,6] --> mergesort(L) --> meregesort([3,2,4]) + mergesort([1,6])
+        # and so on
+        def merge(L1, L2, L):
+            ind1 = 0
+            ind2 = 0
+            indL = 0
+
+            while ((ind1 < len(L1)) and (ind2 < len(L2))):
+                 # The case when both lists that we are merging have numbers in it. 
+                if L1[ind1] < L2[ind2]:
+                    L[indL] = L1[ind1]
+                    ind1 += 1
+                else:
+                    L[indL] = L2[ind2]
+                    ind2 += 1
+                
+                indL += 1
+
+            while (ind1 < len(L1)):
+                 # We have emptied the second list
+                L[indL] = L1[ind1]
+                ind1 += 1
+                indL += 1
+                
+            while (ind2 < len(L2)):
+                # We have emptied the first list
+                L[indL] = L2[ind2]
+                ind2 += 1
+                indL += 1
+                    
+
+        if len(L) >= 2:
+            mid = len(L) // 2
+            L1 = L[:mid]
+            L2 = L[mid:]
+            self.mergeSort(L1)
+            self.mergeSort(L2)
+            merge(L1, L2, L)
+            
+        return L
+     
