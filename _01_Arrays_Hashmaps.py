@@ -215,4 +215,32 @@ class Solution:
             merge(L1, L2, L)
             
         return L
+
+    def topKFrequent(self, nums: List[int], k: int) -> List[int]:
+        # Let's go throught the list
+        # We count how many times we have that element in the list
+        # if it is greter than k, then added to the result list,
+        # otherwise continue
+        table = {}
+
+
+        for x in nums: # O(n)
+            if x in table:
+                table[x] += 1
+            else:
+                table[x] = 1
+
+        # now we need the list:
+        freq = [[] for i in range(len(nums) + 1)] # 0: [], 1:[], ..., 6:[]
+
+        for num, cnt in table.items():
+            freq[cnt].append(num)
+        
+        # Now we want k most frequent elements:
+        res = []
+        for i in range(len(freq) - 1, 0, -1):
+            for n in freq[i]:
+                res.append(n)
+            if len(res) == k:
+                return res
      
