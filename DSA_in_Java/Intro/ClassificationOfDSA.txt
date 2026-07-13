@@ -1,0 +1,33 @@
+-----------------------------------------------------
+Classification of Data Structures: 
+-----------------------------------------------------
+1. Linear
+2. Non-Linear
+3. Hash Based
+
+* 1. Linear:
+    The data comes one after the other, like a line. 
+        - Array: static 
+        - Linked List: dynamic you can add/shrink it
+        - Stack: can be formed by arr/ll, last in, first out
+        - Queue: can be formed by arr/ll, first in, first out
+
+* 2. Non-Linear: 
+    The data is like netwrking and it's not linear
+        - Graph: have nodes and edges. 
+        - Tree: we have a root, nodes that are not cycles. 
+
+
+* 3. Hash Based: 
+    The data is a pair of values (key, value)
+    Make searching and add O(1)
+
+        - Hash Map: (key, value), key unique
+        - Hash Set: Stores unique values
+            HashSet<String> fruits = new HashSet<>();
+            There are no keys, just values
+        
+        They are both O(1) for adding, searching, and removing
+        
+
+

@@ -1,0 +1,46 @@
+-----------------------------------------------------
+Arrays:
+-----------------------------------------------------
+- def: continuous block of data
+- features: 
+    1. Fixed size, so we need to have the size when initilizing
+    2. Values have an index
+
+- Array Operations + time complexity:
+    1. Access: O(1)
+    2. Insetion: O(1)/O(n)
+    3. Delete: O(1)/O(n)
+    4. Traversing: O(n)
+    5. Search: O(n) linear / binary O(log n)
+    6. Update: O(1) 
+
+- Benefit:
+    - random access: O(1)
+    - Cache friendly: Useful in DP, graphs, and more
+    - Easy to sort
+    - Implement other DS
+        heap, linked list, and more
+    
+- Limitations: 
+    - fixed size
+    - insertion and deletion: worst case O(n)
+    - inefficient for frequent modification 
+
+- Use:
+    1. Implement other DS
+    2. Caching and memorizing
+    3. graphs / visited nodes
+    4. Mathematical questions
+    5. Coding patterns: 2 pointers/ sliding window, ...
+
+
+-----------------------------------------------------
+Multi-Dimensional Arrays:
+-----------------------------------------------------
+- we can have 2D, 3D, ... arrays
+- Examples: 
+    - createing a matrix
+
+- Use for DSF
+- we mainly us 1, 2, 3, 4D 
+

@@ -1,10 +1,16 @@
 package DSA_in_Java.Arrays;
 
+import java.util.Arrays;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Map;
 
 public class Arrays_LC {
+    public static void main(String[] args){
+        Arrays_LC test = new Arrays_LC(); 
+        // test.validAnagram("hey", "hi"); 
+    }
+
     public static int[] twoSum(int[] nums, int target){
         // one we make a hash map:
         Map<Integer, Integer> map = new HashMap<>();
@@ -69,5 +75,31 @@ public class Arrays_LC {
         }
 
         return false; 
+    }
+
+    public static boolean validAnagram(String s, String t){
+        int[] firstString = new int[27]; 
+        int[] secondString = new int[27]; 
+        int asciiS = 0; 
+        int asciiT = 0; 
+        s = s.toLowerCase(); 
+        t = t.toLowerCase(); 
+
+        
+        if (s.length() != t.length()){
+            return false;
+        }
+
+        for (int i = 0; i < s.length(); i++){
+            asciiS = s.charAt(i) - 'a'; 
+            asciiT = t.charAt(i) - 'a'; 
+
+            firstString[asciiS] += 1; 
+            secondString[asciiT] += 1; 
+
+        }
+
+        return Arrays.equals(firstString, secondString);
+
     }
 }

@@ -1,8 +1,8 @@
 ##
 ## Using Stacks Class
 ##
-from stackClass import Stack
-from dynamicArray import DynamicArray
+from DSA_in_Python.Previous_answers.intro.stackClass import Stack
+from DSA_in_Python.Previous_answers.intro.dynamicArray import DynamicArray
 
 my_stack = Stack()
 my_stack.extend([1, 2, 3])

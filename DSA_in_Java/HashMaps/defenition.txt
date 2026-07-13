@@ -1,0 +1,26 @@
+-----------------------------------------------------
+HashMaps
+-----------------------------------------------------
+A HashMap stores key-value pairs.
+- Use: 
+    1. When we have a value and we need a remainder: twoSum
+
+- Methods: 
+    map.put(key, value);      // Add/update
+    map.get(key);             // Get value
+    map.remove(key);          // Remove
+    map.containsKey(key);     // Does key exist?
+    map.containsValue(value); // Does value exist?
+    map.size();
+
+-----------------------------------------------------
+HashSets:
+-----------------------------------------------------
+A HashSet stores only unique values.
+
+- Methods: 
+    set.add(value);
+    set.remove(value);
+    set.contains(value);
+    set.size();
+

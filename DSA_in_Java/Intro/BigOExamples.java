@@ -1,6 +1,7 @@
-package DSA_in_Java;
+package DSA_in_Java.Intro;
 
 public class BigOExamples {
+    // Time complexity: 
     // Time complexity: O(1)
     public static int getFirstElement(int[] arr){
         return arr[0]; 
@@ -65,5 +66,7 @@ public class BigOExamples {
         return fib(n-1) + fib(n-2); 
     }
 
+    // --------------------------------------------
+    // Space complexity: 
 
 }
